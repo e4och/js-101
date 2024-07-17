@@ -40,14 +40,14 @@ const car = {
 				console.log("Let's Go Places")}
 };
 
-car.slogan(); //caliing the **slogan()** method
+car.slogan(); //caliing the slogan() method
 
 //The slogan property is a method here, because it's a function inside an object
 
-**--------------------------------------------------------------------------------**
-
-**OUTPUT:**
-**Let's Go Places**
+```
+```txt
+OUTPUT:
+Let's Go Places
 ```
 
 # Constructors / Constructor Function
@@ -56,61 +56,57 @@ A constructor function is simply a function that creates **objects** for us.  We
 code duplication. 
 We use a keyword called “**new**” which basically says that we need a new object
 
-<aside>
-💡 **By convention, A constructor function always starts with a capital alphabet.**
 
-</aside>
+> 💡 By convention, A constructor function's first letter always starts as captial
 
-```jsx
+
+
+```scala
 function Person(name){
 	this.name = name
 }
 
 const user_1 = new Person('Enoch'); //creating a new object from the class Person
 console.log(user_1); 
+```
 
-**--------------------------------------------------------------------------------**
-
-**OUTPUT:
+```scala
+OUTPUT:
 
 Person {name: 'Enoch'}
 name: "Enoch"
-[[Prototype]]: Object**
+[[Prototype]]: Object
 
-/*As we can see in the red highlighted output, the constructor made an object
-	for us.*/
+//As we can see in the red highlighted output, the constructor made an object for us
 ```
 
-<aside>
-🤔 **But if we look closely, our function (Person) is not returning anything, how is it then assigning the object to the user_1 variable?**
-
-</aside>
+>🤔 **But if we look closely, our function (Person) is not returning anything, how is it then assigning the object to the user_1 variable?**
 
 When we use the new keyword when creating a new object, JavaScript automatically does two important things behind the scenes (We won’t see any of that happening)
 
-1. The first thing that JavaScript does is that, it creates an empty object, and the “**this**” keyword points to the object which will store the parameter that we gave while creating a new object as properties inside the object 
-2. And secondly, it returns the object that the “**this**” keyword points, and stores it inside the variable which we used to assign an new instance of the class (**the variable user_1 in this case**) and when we display it out, the object which is stored inside the variable is displayed.
+* The first thing that JavaScript does is that, it creates an empty object, and the “**this**” keyword points to the object which will store the parameter that we gave while creating a new object as properties inside the object 
+* And secondly, it returns the object that the “**this**” keyword points, and stores it inside the variable which we used to assign an new instance of the class (**the variable user_1 in this case**) and when we display it out, the object which is stored inside the variable is displayed.
 
-**Let’s look at another example to understand the concept thoroughly** 
+## Let’s look at another example to understand the concept thoroughly
 
-```jsx
+```scala
 function Vehicle(type){
 
-    this.type = type;       /* When we use a “**this**” keyword, An empty object\
-															 is created and the “**this**” keyword
-															 points to that object.
-    
-		this.year = 2001;        /* Since there is already an object,
-												        we are adding new a property to it */
-    
-		console.log(this);
+    this.type = type;         /* When we use a "this" keyword,
+                              An empty object is created and the “this” keyword points to that object. */
+
+    this.year = 2001;        // Since there is already an object, we are adding new a property to it
+
+    console.log(this);
+
 }
 
 const v1 = new Vehicle("car"); //creating a new object
 
-**-------------------------------------------------------------------------------**
+```
 
-**OUTPUT:
+```scala
+OUTPUT:
 
 Vehicle {type: 'car', year: 2001}
 type: "car"
@@ -118,13 +114,12 @@ year: 2001
 [[Prototype]]: Object**
 ```
 
-```jsx
-			
-            **Creating objects without the use of contstructors**
+### Creating objects without the use of contstructors
 
+```jsx
 const user_1 = {
     name: 'Enoch',
-    introduce: function(){      //creating a method
+    introduce: function(){      				//creating a method
         console.log("My name is ${this.name}");
     }
 }
@@ -149,10 +144,11 @@ console.log(user_2.name);
 
 console.log(user_3.name);
 
---------------------------------------------------------------------------------
-                
-									**Creating objects using contstructors**
+```
 
+### Creating objects using contstructors
+
+```jsx
 function Person(name){
 	this.name = name
 	this.introduce = () => {             //creating a method
@@ -168,20 +164,21 @@ console.log(user_2);
 
 const user_3 = new Person("Ram");
 console.log(user_3);
-
-/*Notice the difference between the code which uses constructors and the one
-	without using constructors. Using constructors allow us to write code without
-	duplication and overall improves readability of the code */
 ```
+
+
+>**Notice the difference between the code which uses constructors and the one
+>without using constructors. Using constructors allow us to write code without
+>duplication and overall improves readability of the code.**
+
 
 # Digging deeper into the “This” keyword concept
 
 In JavaScript, the **`this`** keyword refers to the current object or context. The value of **`this`** dynamically changes depending on the context in which it is used.
 
-<aside>
-⚠️ **The `this` keyword when used inside a method will be limited to the method that it is in. But when the `this` keyword is used inside a  regular function, it will refer to the global object which is window in case of browsers and global in node.**
 
-</aside>
+> ⚠️ **The `this` keyword when used inside a method will be limited to the method that it is in. But when the `this` keyword is used inside a  regular function, it will refer to the global object which is window in case of browsers and global in node.**
+
 
 ## Demonstrating the workings of  **`this`** keyword inside a method
 
@@ -198,21 +195,22 @@ const vehicle = {
 
 vehicle.start();
 ```
-------------------------------------------------------------------------------------------------------------
-**OUTPUT:**
 
-```jsx
-**{type: 'car', start: ƒ}
+```scala
+OUTPUT:
+
+{type: 'car', start: ƒ}
 start: ƒ start()
 type: "car"
-[[Prototype]]: Object**
-
-/*Because **start()** is a method inside the vehicle object, the "this" keyword references to vehicle object */
+[[Prototype]]: Object
 ```
-```jsx
--------------------------------------------------------------------------------**
-                                **EXAMPLE 2**
 
+Because **``start()``** is a method inside the vehicle object, the "this" keyword references to vehicle object.
+
+
+### EXAMPLE 2
+
+```jsx
 const vehicle = {
 
 	type: 'car',
@@ -226,24 +224,24 @@ vehicle.stop = function(){
 };
 
 vehicle.stop();
+```
 
-**-------------------------------------------------------------------------------**
-
-**OUTPUT:
+```scala
+OUTPUT:
 
 {type: 'car', start: ƒ, stop: ƒ}
 start: ƒ start()
 stop: ƒ ()
 type: "car"
-[[Prototype]]: Object**
-
-/* Even if we were to add another method the the object later on, the "**this**"
-	 keyword will still references the vehicle object. 
-	 Because, again the stop method is inside the vehicle object */
-
+[[Prototype]]: Object
 ```
 
-## Demonstrating the workings of  **`this`** keyword inside a regular function
+>Even if we were to add another method the the object later on, the **`this`** keyword will still references the vehicle object. 
+>Because, again the stop method is inside the vehicle object
+
+
+
+### Demonstrating the workings of  **``this``** keyword inside a regular function
 
 ```jsx
 
@@ -253,17 +251,17 @@ function someRandomFunction(){
 
 someRandomFunction();
 
-**---------------------------------------------------------------------------------
+```
 
+```scala
 OUTPUT:
 
 Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}**
 
-/* Just as we learnt before, when the "this" keyword is used in a regular function,
-	it will refer to the window object */
+Just like we learnt before, when the "this" keyword is used in a regular function, it will refer to the window object
 ```
 
-# Manipulating properties in an object
+## Manipulating properties in an object
 
 ```jsx
 car.year = 2050; //will change the year property of the Car object
@@ -273,35 +271,30 @@ car.price = "10 lakhs"; //will add a new property called price to the Car object
 delete car.price; //will delete the price property from the Car object
 ```
 
-# Displaying outputs
+# Displaying outputs of an object
 
 ## Using Dot notation
 
 ```jsx
 console.log(car); //will display all properties & values inside the Car object
-
-**OUTPUT:**
-**{brand: 'hyundai', model: 'City', year: 2050}**
-**---------------------------------------------------------------------**
-
 console.log(car.brand); //will display the value inside the brand property
-
-**OUTPUT:
-Hyundai
----------------------------------------------------------------------**
-
 console.log(car.year); //will display the value inside the year property
+```
 
-**OUTPUT:
+```scala
+OUTPUT:
+{brand: 'hyundai', model: 'City', year: 2050}
+
+Hyundai
+
 2050
----------------------------------------------------------------------**
-
 ```
 
 ## Using Bracket Notation
 
-There are some instances where we need to use the bracket Notation instead of the Dot notation
-For example if we are trying to display a property called **delivery-time**, JavaScript will try to do perform subtraction, so we need to use the **square brackets** and add quotes around the property
+There are a few instances where we need to use the bracket Notation instead of the Dot notation
+For example if we are trying to display a property called **delivery-time**, JavaScript will try to do perform subtraction, 
+so we need to use the **``square brackets``** and add quotes around the property
 
 ```jsx
 console.log(car.delivery-time); //doing this will throw an error
@@ -313,24 +306,28 @@ console.log(car['delivery-time']);//instead we use square brackets
 
 We can use a Build-in Object called **JSON** to convert a JavaScript object to JSON
 
-We use a method called **`.stringify()` to do that**
+We use a method called **`.stringify()`** to do that
 
 We can convert a JSON to JavaScript object using the same Build-in Object called **JSON** but by using another method called **`.parse()`**
 
 ```jsx
 const jsonString = JSON.stringify(car); //converts & stores the **Car** property as JSON 
 console.log(jsproperty) //displays the JS property as JSON
+```
 
-**OUTPUT:
-{"brand":"Hyundai","model":"City","year":2050}**
+```scala
+OUTPUT:
+{"brand":"Hyundai","model":"City","year":2050}
+```
 
--------------------------------------------------------------------------------------
-
+```jsx
 const jsproperty = JSON.parse(jsonString); //converts the JSON back to JS object
 console.log(jsproperty) //displays the JS property
+```
 
-**OUTPUT:**
-**{brand: 'Hyundai', model: 'City', year: 2050}**
+```scala
+OUTPUT:
+{brand: 'Hyundai', model: 'City', year: 2050}
 ```
 
 # localStorage Object
@@ -340,23 +337,23 @@ The localStorage object in JavaScript can be used to store data locally onto a u
 ```jsx
 <h1>BUTTON FUNCTIONALITY</h1>
     
-    <button class="click-button">Click Me!</button>
+<button class="click-button">Click Me!</button>
   
-    localStorage.setItem('name', 'BOB') //key = name & value = BOB
+localStorage.setItem('name', 'BOB') //key = name & value = BOB
   
 
-    var name = localStorage.getItem('name') //retrieving value from key 'name'
-    var message = () => { alert("Welcome back, " + name +'!')};
+var name = localStorage.getItem('name') //retrieving value from key 'name'
+
+var message = () => { alert("Welcome back, " + name +'!')};
     
-    document.querySelector(".click-button").addEventListener('click', message);
- 
-/* The setItem and removeItem method takes two parameters. The first one being
-the key and the second parameter is the value that is to be stored in the key
+document.querySelector(".click-button").addEventListener('click', message);
 
-We can use the getItem method to get values by providing a parameter which is
-the key of the value we need to retrieve.
-*/
 ```
+
+The setItem and removeItem method takes two parameters. 
+The first one being the key and the second parameter is the value that is to be stored in the key.
+
+We can use the getItem method to get values by providing a parameter which is the key of the value we need to retrieve.
 
 # setTimeout function
 
@@ -423,7 +420,7 @@ setInterval(function(){
 	alert("Interval 1!");
 }, 3000);
 
-//this funtion will alert "Interval 1!" every 3 seconds
+//This funtion will alert "Interval 1!" every 3 seconds
 ```
 
 # forEach function
@@ -443,11 +440,12 @@ things = [ //array
 	console.log(item);
 	console.log(pos);	
 });
+```
 
----------------------------------------------------------------------------------
-**OUTPUT:**
+```scala
+OUTPUT:
 
-**todo 1
+todo 1
 0
 
 todo 2
@@ -460,7 +458,7 @@ todo 4
 3
 
 todo 5
-4**
+4
 ```
 
 # Map function
@@ -476,24 +474,28 @@ const doubleNumbers = numbers.map(individualNumbers =>{
 
 console.log(doubleNumbers)
 
-/*This code will basically return an array with the values in the "**numbers**"
-array multiplied by 2.
-Notice the highlighted variable, it's the temporary variable which will
-store the values that are iterated through the original arrray, temporarily.
-It can be named anything but it's often named item or element*/
+```
 
-   **We can write the above code in a much cleaner way using the ES6 syntax**
+```scala
+This code will basically return an array with the values in the "numbers" array multiplied by 2.
+Notice the highlighted variable, it's the temporary variable which will store the values that are iterated through the original arrray,
+temporarily. It can be named anything but it's often named item or element
+```
 
+### We can write the above code in a much cleaner way using the ES6 syntax**
+
+```jsx
 const numbers = [2,4,6,8,10]
 
 const doubleNumbers = numbers.map(e => e * 2)
 
 console.log(doubleNumbers)
 
-/*Remember, in ES6 syntax, if we are only returning a single item, we don't
-need to put them in curly brackets. This way of writing JavaScript code is
-much more cleaner and readable*/
 ```
+>Remember, in ES6 syntax, if we are only returning a single item, we don't
+>need to put them in curly brackets. This way of writing JavaScript code is
+>much more cleaner and readable*/
+
 
 # Find method
 
@@ -528,27 +530,28 @@ function search(people){
 
 console.log(names.find(search)) 
 
-/*Displaying the output of the find function which takes in the search function
-	as an argument which we defined above */
+/*Displaying the output of the find function which takes in the search function as an argument which we defined above */
 
-------------------------------------------------------------------------------
+```
+```scala
 **OUTPUT:
 
 { name: 'Ram', age: 18, employed: false }**
 
-------------------------------------------------------------------------------
+```
 
-/*We can take this a step further and access just the individual values instead
-of the entire object itself */
+### We can take this a step further and access just the individual values instead of the entire object itself */
 
+```jsx
 console.log(names.find(search).age) //Displays the age value from the object
 console.log(names.find(search).employed) // Displays a boolean value
+```
 
-------------------------------------------------------------------------------
-**OUTPUT:**
+```scala
+OUTPUT:
 
-**18
-false**
+18
+false
 ```
 
 # Filter Method
