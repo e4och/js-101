@@ -50,7 +50,7 @@ OUTPUT:
 Let's Go Places
 ```
 
-# Constructors / Constructor Function
+## Constructors / Constructor Function
 
 A constructor function is simply a function that creates **objects** for us.  We can use it to create objects in our code. It helps us to create an instance of a class (blueprint) and therefore remove
 code duplication. 
@@ -87,7 +87,7 @@ When we use the new keyword when creating a new object, JavaScript automatically
 * The first thing that JavaScript does is that, it creates an empty object, and the “**this**” keyword points to the object which will store the parameter that we gave while creating a new object as properties inside the object 
 * And secondly, it returns the object that the “**this**” keyword points, and stores it inside the variable which we used to assign an new instance of the class (**the variable user_1 in this case**) and when we display it out, the object which is stored inside the variable is displayed.
 
-## Let’s look at another example to understand the concept thoroughly
+### Let’s look at another example to understand the concept thoroughly
 
 ```scala
 function Vehicle(type){
@@ -172,7 +172,7 @@ console.log(user_3);
 >duplication and overall improves readability of the code.**
 
 
-# Digging deeper into the “This” keyword concept
+## Digging deeper into the “This” keyword concept
 
 In JavaScript, the **`this`** keyword refers to the current object or context. The value of **`this`** dynamically changes depending on the context in which it is used.
 
@@ -180,9 +180,9 @@ In JavaScript, the **`this`** keyword refers to the current object or context. T
 > ⚠️ **The `this` keyword when used inside a method will be limited to the method that it is in. But when the `this` keyword is used inside a  regular function, it will refer to the global object which is window in case of browsers and global in node.**
 
 
-## Demonstrating the workings of  **`this`** keyword inside a method
+### Demonstrating the workings of  **`this`** keyword inside a method
 
-**EXAMPLE 1**
+### EXAMPLE 1
 
 ```jsx
 const vehicle = {
@@ -256,12 +256,12 @@ someRandomFunction();
 ```scala
 OUTPUT:
 
-Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}**
-
-Just like we learnt before, when the "this" keyword is used in a regular function, it will refer to the window object
+Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}
 ```
 
-## Manipulating properties in an object
+>Just like we learnt before, when the "this" keyword is used in a regular function, it will refer to the window object
+
+### Manipulating properties in an object
 
 ```jsx
 car.year = 2050; //will change the year property of the Car object
@@ -271,9 +271,9 @@ car.price = "10 lakhs"; //will add a new property called price to the Car object
 delete car.price; //will delete the price property from the Car object
 ```
 
-# Displaying outputs of an object
+## Displaying outputs of an object
 
-## Using Dot notation
+### Using Dot notation
 
 ```jsx
 console.log(car); //will display all properties & values inside the Car object
@@ -290,7 +290,7 @@ Hyundai
 2050
 ```
 
-## Using Bracket Notation
+### Using Bracket Notation
 
 There are a few instances where we need to use the bracket Notation instead of the Dot notation
 For example if we are trying to display a property called **delivery-time**, JavaScript will try to do perform subtraction, 
@@ -302,7 +302,7 @@ console.log(car.delivery-time); //doing this will throw an error
 console.log(car['delivery-time']);//instead we use square brackets
 ```
 
-# Convert JS Objects **to JSON** and vise-versa
+## Convert JS Objects **to JSON** and vise-versa
 
 We can use a Build-in Object called **JSON** to convert a JavaScript object to JSON
 
@@ -330,7 +330,7 @@ OUTPUT:
 {brand: 'Hyundai', model: 'City', year: 2050}
 ```
 
-# localStorage Object
+## localStorage Object
 
 The localStorage object in JavaScript can be used to store data locally onto a users’s browser. It can hold up to 10 MB of data. localStorage object has many methods like setItem, removeItem and a few more.
 
@@ -355,7 +355,7 @@ The first one being the key and the second parameter is the value that is to be 
 
 We can use the getItem method to get values by providing a parameter which is the key of the value we need to retrieve.
 
-# setTimeout function
+## setTimeout function
 
 The **`.setTimeout()`** is a built in function is used to time an event to occur. This function takes two parameters, the first one being the function to be executed and the second one is the amount of delay to be set. The time delay is set in milliseconds. Eg: 3 seconds would be 3000 ms.
 
@@ -367,7 +367,7 @@ setTimeout(function(){
 //A function that will alert “Timeout!” after 3 seconds
 ```
 
-# Asynchronous Code
+## Asynchronous Code
 
 Asynchronous code will **not** wait for a line to finish before going to the next line and executing the code. 
 
@@ -384,7 +384,7 @@ performAsyncOperation();
 alert("Continuing main program execution");
 ```
 
-# Synchronous Code
+## Synchronous Code
 
 Synchronous code **will** wait for a line to finish before going to the next line and executing the code. 
 
@@ -409,7 +409,7 @@ simulateDelayedOperation();
 console.log("Hello") //will be printed after a delay of 12.6 seconds
 ```
 
-# setInterval
+## setInterval
 
 **`.setInterval()`** is also a built in function takes two parameters as the **`.setTimeout()`** function. 
 Instead of a delay after which the function will be executed, **setInterval function repeats the function** with a delay given in the parameter between each execution of the function. For example, if we set 3000 ms, the function will run every 3 seconds.
@@ -423,7 +423,7 @@ setInterval(function(){
 //This funtion will alert "Interval 1!" every 3 seconds
 ```
 
-# forEach function
+## forEach function
 
 The **`.forEach()`** function is used to loop through an array and it is actually the preferred way to loop through an array. The **`.forEach()`** function takes a function as an input and we can set parameters to the function, The first parameter the function takes is a variable, the variable will store the items inside the array as the **`.forEach()`** function loops through it. 
 The second parameter is a variable  which will store the index value of the items that the value **`.forEach()`** function loops through.
@@ -461,7 +461,7 @@ todo 5
 4
 ```
 
-# Map function
+## Map function
 
 The **`.map()`** function is a core feature of modern JavaScript and it is a very powerful and commonly used function. The map function works almost similar to the **`.forEach()`** function but with a small difference. While the **`.forEach()`** method iterates through each elements in an array, the **`.map()`**function also iterates through each elements in the array, but it returns with an array of values it iterated through the original array. To achieve this, the **`.map()`** function takes an argument and uses it as a temporary variable to store the values in the array the **`.map()`** function iterates through so that they can be returned. It’s also important to note that  **`.map()`** function **DOES NOT** modify the original array. Unlike **`.forEach()`**, which can modify the elements within the original array, the **`.map()`** function only creates a new array with transformed values and leaves the original array untouched.
 
@@ -475,12 +475,10 @@ const doubleNumbers = numbers.map(individualNumbers =>{
 console.log(doubleNumbers)
 
 ```
+>**This code will basically return an array with the values in the "numbers" array multiplied by 2.
+>Notice the highlighted variable, it's the temporary variable which will store the values that are iterated through the original arrray,
+>temporarily. It can be named anything but it's often named item or element**
 
-```scala
-This code will basically return an array with the values in the "numbers" array multiplied by 2.
-Notice the highlighted variable, it's the temporary variable which will store the values that are iterated through the original arrray,
-temporarily. It can be named anything but it's often named item or element
-```
 
 ### We can write the above code in a much cleaner way using the ES6 syntax**
 
@@ -497,7 +495,7 @@ console.log(doubleNumbers)
 >much more cleaner and readable*/
 
 
-# Find method
+## Find method
 
 The **`find()`** method is used to get the value of the first element in an array that satisfies the provided condition. It takes in a function as a callback function, So we need to create a function to search for the element we want and return it, and pass this function to the **`find()`** method as the callback function. Let’s understand this with a code example:
 
@@ -554,7 +552,7 @@ OUTPUT:
 false
 ```
 
-# Filter Method
+## Filter Method
 
 The **`filter()`** method is a very commonly used method in JavaScript. This method allows us to filter out elements in an array or an object. This allows us to be provided with data that is relevant and ignore the rest of them. The **`filter()`** takes in 3 parameters, But we commonly used it with a callback function that does the process of filtering out things. 
 Let’s understand it with a code example:
@@ -568,22 +566,21 @@ const filtered = array.filter((e)=>{
 
 console.log(filtered);
 
-------------------------------------------------------------------------------
+```scala
 
-**OUTPUT:
+OUTPUT:
 
-[ 2, 4, 45, 0, 9, 12 ]**
-
-/*We define an array named "**array**" containing both positive and negative numbers
-A constant variable called "**filtered**" stores the results of the **array.filter()**
-method, which filters the "**array**" for elements greater than or equal to zero.
-The **array.filter()** method iterates through the array using the temporary 
-variable "**e**" and returns values where "**e**" meets the condition. 
-Finally, the variable "**filtered**" containing the filtered results is displayed.*/
-
+[ 2, 4, 45, 0, 9, 12 ]
 ```
 
-# Arrow Functions
+>We define an array named "**array**" containing both positive and negative numbers
+>A constant variable called "**filtered**" stores the results of the **array.filter()**
+>method, which filters the "**array**" for elements greater than or equal to zero.
+>The **array.filter()** method iterates through the array using the temporary 
+>variable "**e**" and returns values where "**e**" meets the condition. 
+>Finally, the variable "**filtered**" containing the filtered results is displayed.
+
+## Arrow Functions
 
 Arrow function in JavaScript mostly work the same was as a regular function. 
 Arrow functions **DO** **NOT** support hoisting!
@@ -600,11 +597,12 @@ const arrowFunction = (param1, param2) =>{
 arrowFunction();
 regularFunction();
 
-------------------------------------------------------------------------------
-**OUTPUT:
+```
+```scala
+OUTPUT:
 
 Arrow Function!
-Regular Function!**
+Regular Function!
 ```
 
 ## One Parameter arrow function
@@ -623,11 +621,12 @@ const function = (param) => { //with function brackets for the parameter
 };
 
 oneParam(2);
+```
 
-------------------------------------------------------------------------------
+```scala
 **OUTPUT:
 
-3**
+3
 ```
 
 ## **One Line function**
@@ -642,15 +641,16 @@ const function = () => { //same function as above but without the shortcuts
 	return 2+3;
 };
 
-------------------------------------------------------------------------------
-**OUTPUT:
+```
+```scala
+OUTPUT:
 
-3**
+3
 ```
 
-# Query Selectors
+## Query Selectors
 
-## querySelector
+### querySelector
 
 The **`.querySelector()`** method can be used to target html elements, It returns **only** the first element within the document that matches the specified selector, or group of selectors. 
 If no matches are found, **null** is returned.
@@ -661,7 +661,7 @@ If no matches are found, **null** is returned.
 const button = document.querySelector('.click-button'); //storing it to a variable
 ```
 
-## querySelectorAll
+### querySelectorAll
 
 Because the **`.querySelector()`** method only returns the first html element with the specified class name, we use the **`.querySelectorAll()`** method will return a list of **ALL** html elements that match the specified class name. It will be in an array format. We can use array indexing to target individual elements from the list of elements return to use by the **`.querySelectorAll()`** method.
 
@@ -674,36 +674,38 @@ Because the **`.querySelector()`** method only returns the first html element wi
     var queryselector = document.querySelector(".click-button");
     console.log(queryselector);
 
---------------------------------------------------------------------------------
-**OUTPUT:
-
+```
+```scala
+OUTPUT:
+```
+```jsx
 <button class="click-button">Click Me!</button>
 
 //notice the difference between both the methods**
 
 var queryselectorall = document.querySelectorAll(".click-button");
     console.log(queryselectorall);
-
---------------------------------------------------------------------------------
-**OUTPUT:
+```
+```scala
+OUTPUT:
 
 NodeList(4) [button.click-button, button.click-button, button.click-button, button.click-button]**
     
 ```
 
-# Event Listener
+## Event Listener
 
 Event Listeners are used to listen to an event and perform certain functions when the event occurs
 An event listener commonly takes two parameters, The first one is the event or trigger and the second parameter is the function to be executed in the event.
 
-## addEventListener
+### addEventListener
 
 This method is used to add an event listener to an html element
 
-<aside>
-💡 **We can add multiple event listeners to an element**
 
-</aside>
+>💡 **We can add multiple event listeners to an element**
+
+
 
 ```jsx
 <button class="click-button">Click Me!</button> 
@@ -729,7 +731,7 @@ Example code below:
 button.addEventListener('click', eventListener); //using the variable 
 ```
 
-## removeEventListener
+### removeEventListener
 
 This method is used to remove an event listener from an html element
 
@@ -746,7 +748,7 @@ This method is used to remove an event listener from an html element
 to remove it later using the removeEventListener method */
 ```
 
-## addEventListener with ‘keydown’ event
+### addEventListener with ‘keydown’ event
 
 If we want to listen to the keyboard inputs, we must use the keydown event listener.
 
@@ -767,7 +769,7 @@ on the keyboard
 */
 ```
 
-## Event Listener which only runs once
+### Event Listener which only runs once
 
 We might sometimes want to listen for an event only once, and after that we do not want the event listener to listen anymore. To achieve that we can give in a third parameter to the **`.eventListener()`** method.
 
@@ -909,8 +911,10 @@ for the grandparent DIV, after that the control goes back to the clicked div
 Sometimes we might select all html elements we want using the **`.querySelectorAll()`** method and later on we decided to create one more such element. But interestingly, the new element will not be selected by the **`.querySelectorAll()`** method. That’s because we created the HTML element after we have used query selector. Although we can explicitly write code for the new element it is a good practice to include it in one go. So to solve this problem, we use Event Delegation.
 Suppose we want to event listen for click on the HTML elements, we can add an event listener to the document’s body and check if the click was performed on the elements which we wanted and perform functions based upon it. We can let the functions be performed if the click was on our desired elements or otherwise just ignore the clicks.
 
+### THE PROBLEM
+
 ```jsx
-                                **THE PROBLEM**
+                            
 
 const divs = document.querySelectorAll("div"); //selecting all the DIVs
     divs.forEach(div => {
@@ -939,8 +943,10 @@ The Event Delegation concept solves this problem
 ```
 
 ```jsx
-                              **THE SOLUTION**
+```
+### THE SOLUTION
 
+```
 const divs = document.querySelectorAll("div");
 
 //performing checks to verify if the mouse clicks were on the DIV element
@@ -960,18 +966,17 @@ const divs = document.querySelectorAll("div");
     newDiv.style.backgroundColor = "purple"
 
     document.body.append(newDiv)
-
-/* In the above code, we have written a check to verify if the mouse clicks by
-the user were on the DIV elements or not. We are using a method to do this.
-If the clicks matches the condition, The alert function will be executed or else
-the clicks would simply be ignored. This is a useful real life application of 
-the Event Delegation concept.
-*/
 ```
+>In the above code, we have written a check to verify if the mouse clicks by
+>the user were on the DIV elements or not. We are using a method to do this.
+>If the clicks matches the condition, The alert function will be executed or else
+>the clicks would simply be ignored. This is a useful real life application of 
+>the Event Delegation concept.
 
-# Useful DOM Manipulation techniques
 
-## Append
+## Useful DOM Manipulation techniques
+
+### Append
 
 The **`.append()`** method is used to append on any html elements and strings. We can provide append method with multiple parameters which can be used to append multiple things at once.
 
@@ -981,7 +986,7 @@ document.body.append("Hello");//single parameter
 document.body.append("Hello ", "What is your name?");//multiple parameter
 ```
 
-## Create Element
+### Create Element
 
 The **`.createElement()`** method can be used to create or add an HTML element. We can add a **‘DIV’** element for example. 
 
@@ -990,12 +995,11 @@ var div = document.createElement('div'); //creating a div element
 document.body.append(div); //adding/appending the div to the pagearray
 ```
 
-<aside>
-⚠️ **creating an element to be added to the document using JavaScript is not enough, we must also add it. For that reason we use the append method to append the element to the document’s body.**
 
-</aside>
+>⚠️ **creating an element to be added to the document using JavaScript is not enough, we must also add it. For that reason we use the append method to append the element >to the document’s body.**
 
-## Inner Text
+
+### Inner Text
 
 The **`.innerText()`**   method is used to add texts into an HTML element. Suppose we want to add a text inside the div we created using the **`.createElement()`** method, we can simply use the **`.innerText()`**method to do that
 
@@ -1005,16 +1009,16 @@ document.body.append(div);
 div.innerText="Hello" //adding text to the div
 ```
 
-## Text Content
+### Text Content
 
 The **`.textContent()`** method works similar to the **`.innerText()`** method. When adding text, there is no difference in how both the methods work. The difference is that the **`.innerText()`** method checks to see if the text is set to be hidden by the CSS or it is visible. If it’s hidden, then the specific text won’t be made visible by the **`.innerText()`** method whereas the **`.textContent()`** method will display an element no matter if it is set to be hidden by the CSS. 
 
-<aside>
-⚠️ **The `.textContent()` method will also display the exact text content. It will display all the spacing as well as the indentations in the HTML code**
 
-</aside>
+>⚠️ **The `.textContent()` method will also display the exact text content. It will display all the spacing as well as the indentations in the HTML code**
 
-## Inner HTML
+
+
+### Inner HTML
 
 The **`.innerHTML()`** method is used to add HTML elements into the body. It can also be used to add HTML code inside another HTML element
 
@@ -1024,7 +1028,7 @@ document.body.innerHTML="<h4>INNER HTML</h4>" //adding html to the body
 div.innerHTML="<h1>HELLO</h1>" //adding html code inside another the div element
 ```
 
-## Remove
+### Remove
 
 We can remove content from our HTML by using the **`.remove()`** method.
 
@@ -1034,79 +1038,87 @@ var hello = document.querySelector(".greet");
 
 hello.remove(); //removing the html element with class "greet"
 															
----------------------------------**OR**---------------------------------------------
+```
+### OR
 
+```jsx
 document.querySelector(".greet").remove(); //or we can just remove it directly
 ```
 
-# Essential DOM Manipulation Techniques
+## Essential DOM Manipulation Techniques
 
-## Get Attribute
+### Get Attribute
 
 The **`.getAttribute()`**e method is used to display the attributes of an html element. Attributes like class, title, id etc can be displayed using the **`.getAttribute()`** method. This method takes one parameter which is the attribute type of an html element we want to be displayed. 
 
-```jsx
+```html
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
 </body>
-
+```
+```jsx
 alert(document.querySelector(".how").getAttribute("title"));
-
-/*The querySelector method will select the html element with class ".how" and it
-will display the tile which has been set to it.
-The output will be an alert pop up with the text "alright?"
-*/
 ```
 
-## Set Attribute
+>The querySelector method will select the html element with class ".how" and it
+>will display the tile which has been set to it.
+>The output will be an alert pop up with the text "alright?"
+
+### Set Attribute
 
 The **`.setAttribute()`** method is used to set attributes to an HTML element. Attributes like class, id, title etc can be set to an HTML element by using the **`.setAttribute()`** method. This method takes **two** parameters. The first parameter is the attribute which we want to set, and the second parameter is the value which we want to set to the attribute.
 
-<aside>
-💡 **We can provide the parameter with an attribute which does not exist in the html element and it will create the attribute and set the value we give.**
 
-</aside>
+>💡 **We can provide the parameter with an attribute which does not exist in the html element 
+> and it will create the attribute and set the value we give.**
 
-```jsx
+
+
+```html
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
 </body>
+```
 
+```jsx
 document.querySelector(".water").setAttribute("id", "under" );
+```
 
-/*This will select the html element with class ".water" and will create an
-**ID** attribute and set it's value to "under"
-*/
+>This will select the html element with class ".water" and will create an
+>**ID** attribute and set it's value to "under"
 
+```jsx
 alert(document.querySelector(".water").getAttribute("id"));
 //The output will be an alert box with the text "under"
 ```
 
-## Remove Attribute
+### Remove Attribute
 
 The `.**removeAttribute()**` method will remove an attribute from an HTML element provided that the attribute exists in the first place. Attributes like class, id, title etc can be removed
 This method takes one parameter which is the name of the attribute that we want to remove.
 
-```jsx
+```html
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
 </body>
+```
 
+```jsx
 document.querySelector(".how").removeAttribute("title");
 //removing the title attribute
 
 alert(document.querySelector(".how").getAttribute("title"));
+```
+```scala
+OUTPUT: 
 
---------------------------------------------------------------------------------
-**OUTPUT: 
-
-An alert box with the text "NULL"** 
+An alert box with the text "NULL"
 ```
 
 ## Class List
@@ -1117,21 +1129,22 @@ The Class List contains methods that lets us manipulate classes in HTML elements
 
 The **`.classList.add()`** method lets us add classes to an HTML element. It takes one input which is the name of the class we want to add to the HTML element.
 
-```jsx
+```html
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
     <h3>Please help me</h3>
 </body>
+```
 
+```jsx
 document.querySelector("h3").classList.add("send-help"); //adding class
 
 alert(document.querySelector("h3").getAttribute("class"));//displaying the class
-
---------------------------------------------------------------------------------
-
-**OUTPUT:
+```
+```scala
+OUTPUT:
 
 An alert box with the text "send-help"** 
 ```
@@ -1140,64 +1153,68 @@ An alert box with the text "send-help"**
 
 The **`.classList.remove()`** method is used to remove a class from an HTML element. This method takes one input and it is the name of the class that we want to remove from the HTML element.
 
-```jsx
+```html
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
     <h3 class="send-help">Please help me</h3>
 </body>
+```
 
+```jsx
 //removing the class
 document.querySelector(".send-help").classList.remove("send-help");
 
 alert(document.querySelector("h3").getAttribute("class")); //displaying classes
+```
+```scala
+OUTPUT:
 
---------------------------------------------------------------------------------
-
-**OUTPUT:
-
-A blank alert box**
+A blank alert box
 ```
 
 ### Class List Toggle
 
-The .toggle() method when used either add the class to the HTML if it doesn’t exist or it will remove the class if it exists in the HTML element. This method takes two parameter. The first parameter is the class name we want to toggle and the second parameter is a boolean value.
+The **`.toggle()`** method when used either add the class to the HTML if it doesn’t exist or it will remove the class if it exists in the HTML element. This method takes two parameter. The first parameter is the class name we want to toggle and the second parameter is a boolean value.
 
-<aside>
-📌 **If the boolean value is set to “**true**” then it will add the class which we provided to the HTML element and if we set the value to “**false**” then it will remove the class from the HTML element.**
 
-</aside>
+>📌If the boolean value is set to “**true**” then it will add the class which we provided to the HTML element and if we set the value to “**false**” then >it will remove the class from the HTML element.
 
-```jsx
+```html
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
     <h3 class="send-help">Please help me</h3>
 </body>
-
+```
+```jsx
 document.querySelector("h3").classList.toggle("send-help"); //toggling
+```
 
---------------------------------------------------------------------------------
-**OUTPUT:
+```scala
+OUTPUT:
 
-false //the class** "send-help" **exists so it was removed**
---------------------------------------------------------------------------------
+false 
 
+//the class "send-help" exists so it was removed
+```
+```html
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
     <h3 class="">Please help me</h3>
 </body>
-
+```
+```jsx
 document.querySelector("h3").classList.toggle("send-help"); //toggling
+```
+```scala
+OUTPUT:
 
---------------------------------------------------------------------------------
-**OUTPUT:
-
-true //the class** "send-help" **doesn't exist so it was added**
+true //the class "send-help" doesn't exist so it was added
 ```
 
 ## Style
@@ -1208,22 +1225,26 @@ The style property contains can be used to manipulate the CSS of an HTML, direct
 
 The **`.style.color`** property can be used to change the colour of a text in an HTML element.
 
-```jsx
-**//Defult HTML Code**
+```html
+
+//Defult HTML Code
+
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
     <h3 class="send-help">Please help me</h3>
 </body>
+```html
 
---------------------------------------------------------------------------------
+```jsx
 
 document.querySelector(".send-help").style.color = "red"; //setting color to red
+```
 
---------------------------------------------------------------------------------
+```html
 
-**//HTML Code after manipulation. Notice the highlighted code below.**
+//HTML Code after manipulation. Notice the highlighted code below
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
@@ -1237,29 +1258,33 @@ document.querySelector(".send-help").style.color = "red"; //setting color to red
 The **`.style.backgroundColor`** property lets us change the background color of an HTML element.
 It works the same way as the **`.style.color`** property.
 
-```jsx
-**//Defult HTML Code**
+```html
+
+//Defult HTML Code
+
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
     <h3 class="send-help">Please help me</h3>
 </body>
-
---------------------------------------------------------------------------------
+```
+```jsx
 
 //setting the background color to red
 document.querySelector(".send-help").style.backgroundColor="red";
+```
 
---------------------------------------------------------------------------------
+```html
 
-**//HTML Code after manipulation. Notice the highlighted code below.
+//HTML Code after manipulation. Notice the highlighted code below.
+
 <body>
     <h1 class="greet">Hello</h1>
     <h2 class="how" title="alright?">How are you?</h2>
     <h2 class="water">I am under the water</h2>
     <h3 class="send-help" style="background-color: red;">Please help me</h3>
-</body>**
+</body>
 ```
 
 # JavaScript Promises
@@ -1281,21 +1306,21 @@ vehicle.then(function(onSuccess){
 }, function(onError){
     console.log(onError + " is not a valid car name!")
 })
-
-/*After we have made a promise, we have to use call multiple methods on it. We
-have used the **then()** method which is used to describe what to do when the
-the promise returns the data. So we have wrote a function with a prameter called
-**onSuccess** which references to the return data of the Promise object.
-And in the case of a reject, we have created another function with a parameter
-called onError which is also a reference to the return data of the Promise
-object.*/
 ```
+>After we have made a promise, we have to use call multiple methods on it. We
+>have used the **then()** method which is used to describe what to do when the
+>the promise returns the data. So we have wrote a function with a prameter called
+>**onSuccess** which references to the return data of the Promise object.
+>And in the case of a reject, we have created another function with a parameter
+>called onError which is also a reference to the return data of the Promise
+>object.
+
 
 ## Phases in a Promise
 
 There are 3 phases in a promise. 
 
-### **PENDING**
+### PENDING
 
 This is the initial state of a promise. It means that the asynchronous operation has not yet started or finished.
 
@@ -1309,18 +1334,17 @@ check.then((message) =>{
 }).catch((message) => {
     console.log("Wrong Calculation!")
 })
+```
 
-**--------------------------------------------------------------------------------
-
+```scala
 OUTPUT:
 
 'Promise {<pending>}'**
-
-/*In this code, We have used the promise object but we have not set any rules 
-for the **resolve** and **reject** phase. So by default the code is in a pending state*/
 ```
+>In this code, We have used the promise object but we have not set any rules 
+>for the **resolve** and **reject** phase. So by default the code is in a pending state*/
 
-### **FULFILLED**
+### FULFILLED
 
 This means that the asynchronous operation has completed successfully.
 
@@ -1340,16 +1364,17 @@ check.then((message) =>{
     console.log("Wrong Calculation!")
 })
 
-**--------------------------------------------------------------------------------
+```
 
+```scala
 OUTPUT:
 
 Correct Calculation!**
 'Promise {<fulfilled>: undefined}'
-
-/* In this code, the promise has been fulilled and the **resolve** case
-has worked as intended because **1 + 1 = 2** */
 ```
+In this code, the promise has been fulilled and the **resolve** case
+has worked as intended because **1 + 1 = 2**
+
 
 ### REJECTED
 
@@ -1370,35 +1395,38 @@ check.then((message) =>{
 }).catch((message) => {
     console.log("Wrong Calculation!")
 })
+```
 
-**--------------------------------------------------------------------------------
-
+```scala
 OUTPUT:
 
 Wrong Calculation!**
 'Promise {<fulfilled>: undefined}'
-
-/*Interestingly the log shows that the promise has been fulfilled eventhough
-the reject case was executed. Why did that happen?
-If we think about it, the **catch** method has caught the reject case successfully
-and displayed the messages successfully, so that is why the promise has been
-shown as fulfilled*/
 ```
 
-# **Async/Await in JavaScript**
+>Interestingly the log shows that the promise has been fulfilled eventhough
+>the reject case was executed. Why did that happen?
+>If we think about it, the **catch** method has caught the reject case successfully
+>and displayed the messages successfully, so that is why the promise has been
+>shown as fulfilled*/
+
+# Async/Await in JavaScript
 
 ## The problem with Promises
 
 1. **Callback Hell (Pyramid of Doom):** Promises chaining with **`.then()`** can lead to nested structures that are hard to read and maintain, often referred to as "callback hell."
-2. **Error Handling Complexity:** Handling errors in promise chains requires the use of **`.catch()`**, and errors can jump to the nearest catch block, making error handling less intuitive than **`async/await`** with **`try/catch`**.
-3. **Readability Concerns:** Promise chains may be challenging to read, especially for developers new to asynchronous programming, while **`async/await`** syntax offers a more concise and readable alternative.
+
+3. **Error Handling Complexity:** Handling errors in promise chains requires the use of **`.catch()`**, and errors can jump to the nearest catch block, making error handling less intuitive than **`async/await`** with **`try/catch`**.
+
+5. **Readability Concerns:** Promise chains may be challenging to read, especially for developers new to asynchronous programming, while **`async/await`** syntax offers a more concise and readable alternative.
 
 ## The solution
 
 On the other hand, when you use **`async/await`**, it allows you to write asynchronous code in a more synchronous-looking manner. When you mark a function as **`async`** and use the **`await`** keyword inside that function, the JavaScript engine will pause the execution of that function until the awaited promise is resolved. This makes it easier to write and understand asynchronous code.
 
+## USING PROMISES
+
 ```jsx
-                              **USING PROMISES**
 
 function getData(){
     return new Promise((resolve,reject) =>{
@@ -1419,9 +1447,10 @@ result.then((data) => {
     console.log(data)
 })
 
---------------------------------------------------------------------------------
+```
+## USING ASYNC/AWAIT
 
-														  **USING ASYNC/AWAIT**
+```jsx
 
 function getData(){
     return new Promise((resolve,reject) =>{
@@ -1445,7 +1474,6 @@ async function theAsyncWay(){
 }
 
 theAsyncWay()
-
-/*Notice the improvement in the readability of the code written using 
-	**ASYNC/AWAIT** */
 ```
+
+> Notice the improvement in the readability of the code written using **ASYNC/AWAIT**
