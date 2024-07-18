@@ -1289,7 +1289,7 @@ document.querySelector(".send-help").style.backgroundColor="red";
 
 # JavaScript Promises
 
-Promises in JavaScript is a way of assuring that a function will do something. We have two cases in promises, the first one is the resolve case which essentially means that the code has completed or resolved the promise which was made, and the second one is the reject case which means that the has not been able to complete or resolve the promise it has made. The function returns something in both cases weather it resolved or rejected the promise. This way we can write asynchronous code which is non blocking and the code runs smoothly. Promises are a way to handle asynchronous code in JavaScript. They allow you to write code that will be executed when the asynchronous operation is complete, and they also allow you to handle errors that may occur.
+Promises in JavaScript are a way of assuring that a function will do something. We have two cases in promises, the first one is the resolve case which essentially means that the code has completed or resolved the promise which was made, and the second one is the reject case which means that the has not been able to complete or resolve the promise it has made. The function returns something in both cases whether it resolved or rejected the promise. This way we can write asynchronous code which is non blocking and the code runs smoothly. Promises are a way to handle asynchronous code in JavaScript. They allow you to write code that will be executed when the asynchronous operation is complete, and they also allow you to handle errors that may occur.
 
 ```jsx
 function car(){
@@ -1309,7 +1309,7 @@ vehicle.then(function(onSuccess){
 ```
 >After we have made a promise, we have to use call multiple methods on it. We
 >have used the **then()** method which is used to describe what to do when the
->the promise returns the data. So we have wrote a function with a prameter called
+>the promise returns the data. So we have written a function with a parameter called
 >**onSuccess** which references to the return data of the Promise object.
 >And in the case of a reject, we have created another function with a parameter
 >called onError which is also a reference to the return data of the Promise
@@ -1404,7 +1404,7 @@ Wrong Calculation!**
 'Promise {<fulfilled>: undefined}'
 ```
 
->Interestingly the log shows that the promise has been fulfilled eventhough
+>Interestingly, the log shows that the promise has been fulfilled even though
 >the reject case was executed. Why did that happen?
 >If we think about it, the **catch** method has caught the reject case successfully
 >and displayed the messages successfully, so that is why the promise has been
@@ -1422,7 +1422,7 @@ Wrong Calculation!**
 
 ## The solution
 
-On the other hand, when you use **`async/await`**, it allows you to write asynchronous code in a more synchronous-looking manner. When you mark a function as **`async`** and use the **`await`** keyword inside that function, the JavaScript engine will pause the execution of that function until the awaited promise is resolved. This makes it easier to write and understand asynchronous code.
+On the other hand, when you use **`async/await`**, it allow you to write asynchronous code in a more synchronous-looking manner. When you mark a function as **`async`** and use the **`await`** keyword inside that function, the JavaScript engine will pause the execution of that function until the awaited promise is resolved. This makes it easier to write and understand asynchronous code.
 
 ## USING PROMISES
 
